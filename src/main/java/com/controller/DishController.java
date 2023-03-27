@@ -109,4 +109,13 @@ public class DishController {
     }
 
 
+    @GetMapping("/list")
+    public R<List<Dish>> selectByCategoryId(Dish dish){
+        LambdaQueryWrapper<Dish> dishLambdaQueryWrapper = new LambdaQueryWrapper<>();
+        dishLambdaQueryWrapper.eq(Dish::getCategoryId,dish.getCategoryId());
+        List<Dish> dishList = dishService.list(dishLambdaQueryWrapper);
+        return R.success(dishList);
+    }
+
+
 }
