@@ -1,0 +1,12 @@
+package com.mapper;
+
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.entity.Employee;
+import org.apache.ibatis.annotations.Mapper;
+
+/**
+ * @author Lenovo
+ */
+@Mapper
+public interface EmployeeMapper extends BaseMapper<Employee> {
+}
